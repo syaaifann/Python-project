@@ -1,6 +1,6 @@
 # Python-project🔗
 
-![ss project](imagereadme.png)
+![gambar](image/imagereadme.png)
 
 ## Code xample 1
 
