@@ -1,6 +1,8 @@
 # Python-project🔗
 
-![gambar](image/imagereadme.png)
+<p align="center">
+  <img src="image/imagereadme.png" alt="ss project" width="500">
+</p>
 
 ## Code xample 1
 
