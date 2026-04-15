@@ -1,5 +1,7 @@
 # Python-project🔗
 
+![ss project](ss project.png)
+
 ## Code xample 1
 
 ```
