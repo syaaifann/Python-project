@@ -13,7 +13,6 @@ db_user = {
 def sistem_login (database):
     print("/n---FORM LOGIN---")
     kesempatan = 3
-    db_user = {1111 : "ipan", 2222 : "anon", 3333 : "ghostbyte"}
     while kesempatan > 0:
         id = int(input("masukan id kamu: "))
         
