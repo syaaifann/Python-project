@@ -95,14 +95,14 @@ while kesempatan > 0:
 
 ```
 def registrasi_user ():
-    print("---FORM REGISTRASI---")
+    print("\n---FORM REGISTRASI---")
     nama = input("masukan nama kamu: ")
     levelAkses = input("masukan level akses kamu: ")
     alamat = input("alamat kamu: ")
     return nama, levelAkses, alamat
 
 def sistem_login (nama_pendaftar, level_pendaftar, alamat_pendaftar):
-    print("/n---FORM LOGIN---")
+    print("\n---FORM LOGIN---")
     kesempatan = 3
     daftar_id_sah = [1111, 2222, 3333]
     while kesempatan > 0:
@@ -127,7 +127,7 @@ sistem_login(user_baru, level_baru, alamat_baru)
 
 ## Code Xample 6
 
-### memasangkan id dan user dalam database menggunakan dictionary
+### memasangkan id dan user dalam database menggunakan dictionary (newbie)
 
 ```
 
@@ -138,12 +138,12 @@ db_user = {
     }
 
 def sistem_login (database):
-    print("/n---FORM LOGIN---")
+    print("\n---FORM LOGIN---")
     kesempatan = 3
     while kesempatan > 0:
         id = int(input("masukan id kamu: "))
 
-        if id in db_user:
+        if id in database:
             nama_ditemukan = database[id]
             print(f"[SYSTEM]: halo {nama_ditemukan} ")
             break
@@ -156,6 +156,40 @@ def sistem_login (database):
 
 sistem_login(db_user)
 
+```
+
+### memasangkan id dan user dalam database menggunakan dictionary (Pro)
+
+```
+db_user = {
+    1111 : {"nama" :"ipan", "level": "admin"},
+    2222 : {"nama":"anon","level": "member"},
+    3333 : {"nama": "ghostbyte", "level":"guest"}
+    }
+
+def sistem_login (database):
+    print("\n---FORM LOGIN---")
+    kesempatan = 3
+    while kesempatan > 0:
+        id = int(input("masukan id kamu: "))
+
+        if id in database:
+            nama_ditemukan = database[id]["nama"]
+            level_ditemukan = database[id]["level"]
+            print(f"""
+[SYSTEM]: login berhasil
+nama : {nama_ditemukan}
+level : {level_ditemukan}
+""")
+            break
+        else:
+            kesempatan -= 1
+            print(f"[PERINGATAN]: kesempatan kamu tinggal {kesempatan}")
+
+            if kesempatan == 0:
+                print(f"[PERINGATAN]: terlalu banyak percobaan, sistem anda terkunci")
+
+sistem_login(db_user)
 ```
 
 ---
