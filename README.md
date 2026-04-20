@@ -124,3 +124,39 @@ sistem_login(user_baru, level_baru, alamat_baru)
 ```
 
 ---
+
+## Code Xample 6
+
+### memasangkan id dan user dalam database menggunakan dictionary
+
+```
+
+db_user = {
+    1111 : "ipan",
+    2222 : "anon",
+    3333 : "ghostbyte"
+    }
+
+def sistem_login (database):
+    print("/n---FORM LOGIN---")
+    kesempatan = 3
+    db_user = {1111 : "ipan", 2222 : "anon", 3333 : "ghostbyte"}
+    while kesempatan > 0:
+        id = int(input("masukan id kamu: "))
+
+        if id in db_user:
+            nama_ditemukan = database[id]
+            print(f"[SYSTEM]: halo {nama_ditemukan} ")
+            break
+        else:
+            kesempatan -= 1
+            print(f"[PERINGATAN]: kesempatan kamu tinggal {kesempatan}")
+
+            if kesempatan == 0:
+                print(f"[PERINGATAN]: terlalu banyak percobaan, sistem anda terkunci")
+
+sistem_login(db_user)
+
+```
+
+---
